@@ -1,1 +1,1 @@
-#monocular SLAM from scratch 
+monocular SLAM from scratch 
