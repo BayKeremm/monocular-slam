@@ -1,0 +1,15 @@
+Sterio => uses two cameras for better depth perceotion. 
+Monocular visual SLAM: SLAM with one camera. 
+monocular image sequence captured by a moving camera
+
+1.Key point estimation and mapping 
+locate key point
+track the 2D movement of the ley points across the image sequence
+Orient fast, Rotated BRIEF (ORB)
+
+2. Mapping and Localization
+
+
+-- TODOS --
+how to match the orbs.
+learn how to create the map.
