@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+#from skimage.measure import ransac
+#from skimage.transform import EssentialMatrixTransform
 
 class Frame(object):
     def __init__(self,frame):
@@ -37,10 +39,10 @@ class FrameManager(object):
     def frames(self):
         return self._frames
     
+    # f1 is the new frame, f2 is the previous
     def matchFrames(self,f1,f2):
         bf = cv2.BFMatcher(cv2.NORM_HAMMING)
         matches = bf.knnMatch(f1.des,f2.des,k=2)
-
         #ratio test
         good = []
         for m,n in matches:
@@ -49,5 +51,12 @@ class FrameManager(object):
                 p2=f2.kps[m.trainIdx].pt
                 good.append([p1, p2])
         good = np.asarray(good,dtype=int)
-        return good
+
+    def estimatePose(self,f1,f2):
+       # model, inliers = ransac((good[:,0],good[:,1]),
+       #                     EssentialMatrixTransform,
+       #                     min_samples=8,
+       #                     residual_threshold=1,
+       #                     max_trials=2000)
+        return good 
 
