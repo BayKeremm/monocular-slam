@@ -17,6 +17,7 @@ while True:
     frmManager.addFrame(frm)
     if len(frmManager.frames)==1:
         continue
+
     matches = frmManager.matchFrames(frmManager.frames[-1],frmManager.frames[-2])
 
     for p1,p2 in matches:

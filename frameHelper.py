@@ -51,12 +51,12 @@ class FrameManager(object):
                 p2=f2.kps[m.trainIdx].pt
                 good.append([p1, p2])
         good = np.asarray(good,dtype=int)
+        return good 
 
-    def estimatePose(self,f1,f2):
+#    def estimatePose(self,f1,f2):
        # model, inliers = ransac((good[:,0],good[:,1]),
        #                     EssentialMatrixTransform,
        #                     min_samples=8,
        #                     residual_threshold=1,
        #                     max_trials=2000)
-        return good 
 
